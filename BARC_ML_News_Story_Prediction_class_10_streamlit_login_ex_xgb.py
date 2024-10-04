@@ -22,7 +22,7 @@ authenticator = stauth.Authenticate(
     config['credentials'],
     'news_app_cookie_test',  # Replace with your own cookie name
     'abc123',  # Replace with your own signature key
-    cookie_expiry_days= 300 / 86400  # Cookie expires after 5 seconds. a day has 86400 seconds
+    cookie_expiry_days= 30  # Cookie expires after 5 seconds. a day has 86400 seconds
 )
 
 # Add Login Form
@@ -58,12 +58,12 @@ if 'authenticated' in st.session_state and st.session_state['authenticated']:
     #st.write('You are logged in as:', st.session_state['username'])
 
     # Retrieve blocked emails from the config
-    blocked_emails = config.get('blocked_users', [])
+    #blocked_emails = config.get('blocked_users', [])
 
     # Check if the logged-in user is in the blocked list
-    if username in blocked_emails:
-        st.error("Your account has been blocked.")
-        st.stop()  # Stops the script from running further
+    #if username in blocked_emails:
+        #st.error("Your account has been blocked.")
+        #st.stop()  # Stops the script from running further
 
     # ---- PLACE YOUR MACHINE LEARNING PREDICTION CODE BELOW ----
 
@@ -161,16 +161,16 @@ elif authentication_status is False:
     st.error('Username/password is incorrect. Please try again.')
 
 elif authentication_status is None:
-    st.warning('Please enter your username and password.')# Show login form again if authentication status is None
+    st.warning('Please enter your username and password. Autehentication status NONE')# Show login form again if authentication status is None
 
 
 # Log user activity (optional)
-def log_user_activity(username):
-    with open("user_logs.txt", "a") as log_file:
-        log_file.write(f"{datetime.datetime.now()} - {username} logged in\n")
+#def log_user_activity(username):
+    #with open("user_logs.txt", "a") as log_file:
+        #log_file.write(f"{datetime.datetime.now()} - {username} logged in\n")
 
-if authentication_status:
-    log_user_activity(username)
+#if authentication_status:
+    #log_user_activity(username)
 
 # Add the professional note at the end of the app
 st.write("""
