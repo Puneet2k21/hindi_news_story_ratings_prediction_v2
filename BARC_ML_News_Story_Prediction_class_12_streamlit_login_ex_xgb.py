@@ -27,7 +27,7 @@ authenticator = stauth.Authenticate(
 
 # Add Login Form
 
-login_result = authenticator.login()
+#login_result = authenticator.login()
 
 # Initialize authentication status
 #authentication_status = None  # Ensure it's defined
@@ -44,17 +44,17 @@ if login_result is not None:
     #st.write("Username:", username)
 
     # Set the session state for authentication
-    if authentication_status:
-        st.session_state['authenticated'] = True
-        st.session_state['username'] = username  # Store username for later use
-        st.write(f'Welcome *{name}*')  # Welcome message
-    else:
-        st.session_state['authenticated'] = False
+    #if authentication_status:
+        #st.session_state['authenticated'] = True
+        #st.session_state['username'] = username  # Store username for later use
+        #st.write(f'Welcome *{name}*')  # Welcome message
+    #else:
+        #st.session_state['authenticated'] = False
         #st.write("Login failed for username:", username)
 
 # Check authentication state
-if 'authenticated' in st.session_state and st.session_state['authenticated']:
-    st.write(f'Welcome *{st.session_state["username"]}*')
+#if 'authenticated' in st.session_state and st.session_state['authenticated']:
+    #st.write(f'Welcome *{st.session_state["username"]}*')
     #st.write('You are logged in as:', st.session_state['username'])
 
     # Retrieve blocked emails from the config
@@ -157,11 +157,11 @@ if 'authenticated' in st.session_state and st.session_state['authenticated']:
         # Display the result
         st.write(f"Predicted Rating Category: {predicted_value_tier}")
 
-elif 'authenticated' in st.session_state and st.session_state['authenticated'] is False:
-    st.error('Username/password is incorrect. Please try again.')
+#elif 'authenticated' in st.session_state and st.session_state['authenticated'] is False:
+    #st.error('Username/password is incorrect. Please try again.')
 
-elif 'authenticated' not in st.session_state:
-    st.warning('Please enter your username and password. Authentication status is NONE')  # Show login form again if authentication status is None
+#elif 'authenticated' not in st.session_state:
+    #st.warning('Please enter your username and password. Authentication status is NONE')  # Show login form again if authentication status is None
 
 # Log user activity (optional)
 #def log_user_activity(username):
