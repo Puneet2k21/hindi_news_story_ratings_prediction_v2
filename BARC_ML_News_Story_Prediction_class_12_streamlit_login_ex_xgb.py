@@ -36,8 +36,8 @@ authenticator = stauth.Authenticate(
 #st.write("Login attempt:", login_result)
 
 # Check the result
-if login_result is not None:
-    name, authentication_status, username = login_result
+#if login_result is not None:
+    #name, authentication_status, username = login_result
     
     # Debugging: Log the authentication status and username
     #st.write("Authentication Status:", authentication_status)
