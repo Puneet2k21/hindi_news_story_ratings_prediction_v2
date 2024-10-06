@@ -161,7 +161,7 @@ elif authentication_status is False:
     st.error('Username/password is incorrect. Please try again.')
 
 elif authentication_status is None:
-    st.warning('Please enter your username and password. Autehentication status NONE')# Show login form again if authentication status is None
+    st.warning('Please enter your username and password. Authentication status is NONE')# Show login form again if authentication status is None
 
 
 # Log user activity (optional)
